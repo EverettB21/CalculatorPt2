@@ -21,10 +21,10 @@ class ViewController: UIViewController {
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         var intLabel: Double = Double(label.text!) ?? 0
-        var str = label.text
-        switch sender.currentTitle {
+        var intString = label.text
+        switch sender.titleLabel?.text {
         case "Clear":
-            label.text = "0"
+            intString = "0"
         case "+/-":
             if intLabel / -1 == -intLabel {
                 label.text = "-\(label.text ?? "0")"
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
             equation.type = "add"
             label.text = "0"
         case "1":
-            label.text = "\(label.text ?? "0")1"
+            intString?.append("1")
         case "2":
             label.text = "\(label.text ?? "0")2"
         case "3":
@@ -79,6 +79,7 @@ class ViewController: UIViewController {
         default:
             print("Error with button")
         }
+        label.text = String(Int(intString!)!)
     }
     
 }
