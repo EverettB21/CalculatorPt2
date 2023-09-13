@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         var intLabel: Double = Double(label.text!) ?? 0
+        var str = label.text
         switch sender.currentTitle {
         case "Clear":
             label.text = "0"
